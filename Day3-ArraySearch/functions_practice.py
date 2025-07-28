@@ -1,15 +1,23 @@
-# Day 3 - Find Duplicates in Array using Dictionary
+# Day 3 - Python Functions Practice
 
-def find_duplicates(arr):
-    seen = {}
-    duplicates = []
+# Recursive Factorial
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+num = int(input("Enter a number for factorial: "))
+print("Factorial is:", factorial(num))
+
+
+# Find Maximum in List
+def find_max(arr):
+    max_val = arr[0]
     for num in arr:
-        if num in seen:
-            duplicates.append(num)
-        else:
-            seen[num] = 1
-    return list(set(duplicates))
+        if num > max_val:
+            max_val = num
+    return max_val
 
-a = [1, 2, 3, 2, 4, 5, 1, 3]
-print("Array:", a)
-print("Duplicates:", find_duplicates(a))
+a = [2, 9, 1, 6]
+print("Maximum is:", find_max(a))
